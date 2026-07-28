@@ -37,18 +37,13 @@ A modern userscript that enhances **Raider.IO** character pages with a beautiful
 
 ## Character Widget
 
-<p align="center">
-<img src="./img01.png" width="850">
-</p>
+![Widget](img01.png)
 
 ---
 
 ## Tier Comparison
 
-<p align="center">
-<img src="./img02.png" width="850">
-</p>
-
+![Comparison](img02.png)
 ---
 
 # 📥 Installation
