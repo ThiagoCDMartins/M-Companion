@@ -269,8 +269,16 @@
       color: #b7b7c6;
       white-space: nowrap;
     }
-    #${WIDGET_ID} .rio-cc-track {
+    #${WIDGET_ID} .rio-cc-progress-label {
+      font-size: 9px;
+      color: #8b8b9c;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       margin-top: 6px;
+      margin-bottom: 2px;
+    }
+    #${WIDGET_ID} .rio-cc-track {
+      margin-top: 2px;
       height: 6px;
       width: 100%;
       border-radius: 999px;
@@ -355,6 +363,11 @@
     }
     #${WIDGET_ID}.rio-cc-floating .rio-cc-body { padding: 14px; }
     #${WIDGET_ID}.rio-cc-floating .rio-cc-mode { display: none; }
+    #${WIDGET_ID}.rio-cc-embedded .rio-cc-tier {
+      background: #24252e;
+    }
+    #${WIDGET_ID}.rio-cc-embedded .rio-cc-tier:hover { background: #2b2c37; }
+    #${WIDGET_ID}.rio-cc-embedded .rio-cc-tier.selected { background: #2b2c37; }
   `;
   document.head.appendChild(style);
 
@@ -419,7 +432,7 @@
 
   function fmtDiff(n) {
     const sign = n >= 0 ? '+' : '';
-    return `${sign}${fmt(n)} pts`;
+    return `${sign}${fmt(n)} Rating`;
   }
 
   function extractScore(character) {
@@ -504,9 +517,9 @@
         <span class="rio-cc-title">M+ Companion</span>
         <span class="rio-cc-mini-score" data-mini-score>—</span>
         <div class="rio-cc-controls">
-          <label class="rio-cc-mode-toggle" title="Widget Popup">
-            <input type="checkbox" data-display-mode aria-label="Widget Popup">
-            Popup
+          <label class="rio-cc-mode-toggle" title="Floating Widget">
+            <input type="checkbox" data-display-mode aria-label="Floating Widget">
+            Floating Widget
           </label>
           <button class="rio-cc-btn" data-refresh title="Refresh">&#8635;</button>
           <button class="rio-cc-btn" data-collapse title="Collapse">&#9472;</button>
@@ -586,7 +599,7 @@
         <div class="rio-cc-tier-row">
           <span class="rio-cc-tier-label">${t.icon} ${t.label}</span>
           <span class="rio-cc-tier-value" style="color:${t.color}">—</span>
-          <span class="rio-cc-tier-diff">no data</span>
+          <span class="rio-cc-tier-diff">Unavailable</span>
         </div>
       </div>`;
     }
@@ -599,6 +612,7 @@
             ${t.achieved ? 'Achieved' : fmtDiff(t.diff)}
           </span>
         </div>
+        <div class="rio-cc-progress-label">Progress</div>
         <div class="rio-cc-track">
           <div class="rio-cc-track-fill" style="width:${t.pct}%;background:${t.color}"></div>
         </div>
@@ -622,7 +636,7 @@
       ? '—'
       : primary.achieved
         ? 'Achieved'
-        : `${fmt(Math.abs(primary.diff))} pts to go`;
+        : `${fmt(Math.abs(primary.diff))} points remaining`;
 
     const guildPart = meta.guildName
       ? `<a href="${meta.guildUrl}" target="_blank" rel="noopener noreferrer">&lt;${meta.guildName}&gt;</a> - `
@@ -647,7 +661,7 @@
             </div>
           </div>
           <div class="rio-cc-charhead-score">
-            <div class="rio-cc-charhead-score-label">Score</div>
+            <div class="rio-cc-charhead-score-label">M+ Score</div>
             <div class="rio-cc-charhead-score-value" style="color:${scoreColor}">${fmt(score)}</div>
           </div>
         </div>
@@ -660,6 +674,7 @@
           <span class="rio-cc-compare-label">${primary.label} <span class="rio-cc-compare-muted">— ${fmt(primary.value)}</span></span>
           <span class="rio-cc-compare-diff" style="color:${primary.achieved ? '#6ee7b0' : '#f87171'}">${compareText}</span>
         </div>
+        <div class="rio-cc-progress-label">Progress</div>
         <div class="rio-cc-track">
           <div class="rio-cc-track-fill" style="width:${primary.pct}%;background:${primary.color}"></div>
         </div>
@@ -673,8 +688,8 @@
           href="https://mpluscompanion.lovable.app/character/${encodeURIComponent(character.region)}/${encodeURIComponent(character.realm)}/${encodeURIComponent(character.name)}"
           target="_blank"
           rel="noopener noreferrer"
-        >M+ Companion &#8599;</a>
-        <span>Season ${SEASON.toUpperCase()} · ${(character.region || '').toUpperCase()}</span>
+        >View Dashboard &#8599;</a>
+        <span>Season ${SEASON.toUpperCase()} • ${(character.region || '').toUpperCase()}</span>
       </div>
     `;
 
@@ -701,7 +716,7 @@
       ? '—'
       : primary.achieved
         ? 'Achieved'
-        : `${fmt(Math.abs(primary.diff))} pts to go`;
+        : `${fmt(Math.abs(primary.diff))} points remaining`;
 
     body.innerHTML = `
       <div class="rio-cc-lower">
@@ -709,6 +724,7 @@
           <span class="rio-cc-compare-label">${primary.label} <span class="rio-cc-compare-muted">— ${fmt(primary.value)}</span></span>
           <span class="rio-cc-compare-diff" style="color:${primary.achieved ? '#6ee7b0' : '#f87171'}">${compareText}</span>
         </div>
+        <div class="rio-cc-progress-label">Progress</div>
         <div class="rio-cc-track">
           <div class="rio-cc-track-fill" style="width:${primary.pct}%;background:${primary.color}"></div>
         </div>
@@ -716,10 +732,10 @@
       ${tiersResolved.map((tier) => tierRowHtml(tier, tier.key === primary.key)).join('')}
       <div class="rio-cc-mode">
       <a class="rio-cc-cta" href="https://mpluscompanion.lovable.app/character/${encodeURIComponent(character.region)}/${encodeURIComponent(character.realm)}/${encodeURIComponent(character.name)}"
-          target="_blank" rel="noopener noreferrer">M+ Companion &#8599;</a>
+          target="_blank" rel="noopener noreferrer">View Dashboard &#8599;</a>
         <label>
-          <input type="checkbox" data-display-mode aria-label="Widget Popup">
-          Popup
+          <input type="checkbox" data-display-mode aria-label="Floating Widget">
+          Floating Widget
         </label>
       </div>
     `;
@@ -764,7 +780,7 @@
   }
 
   function renderError(container, message) {
-    container.querySelector('.rio-cc-body').innerHTML = `<div class="rio-cc-error">Error: ${message}</div>`;
+    container.querySelector('.rio-cc-body').innerHTML = `<div class="rio-cc-error">Unable to load data.</div>`;
   }
 
   function getCharacterKey() {
@@ -864,7 +880,7 @@
       if (controller.signal.aborted || requestId !== state.renderRequestId || key !== getCharacterKey()) return;
 
       if (profile.error) {
-        renderError(container, 'character not found on Raider.IO.');
+        renderError(container, 'Character not found.');
         return;
       }
 
