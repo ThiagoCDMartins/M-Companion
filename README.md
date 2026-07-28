@@ -39,12 +39,14 @@ A modern userscript that enhances **Raider.IO** character pages with a beautiful
 <p align="center">
     <img src="https://raw.githubusercontent.com/ThiagoCDMartins/M-Companion/main/img01.png" width="400">
 </p>
+
 ---
 
 ## Tier Comparison
 <p align="center">
     <img src="https://raw.githubusercontent.com/ThiagoCDMartins/M-Companion/main/img02.png" width="400">
 </p>
+
 ---
 
 # 📥 Installation
