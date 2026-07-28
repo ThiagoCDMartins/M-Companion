@@ -34,16 +34,15 @@ A modern userscript that enhances **Raider.IO** character pages with a beautiful
 ---
 
 # 📷 Preview
-
 ## Character Widget
-
-![Widget](img01.png)
-
+<p align="center">
+    <img src="https://raw.githubusercontent.com/ThiagoCDMartins/M-Companion/main/img01.png" width="900">
+</p>
 ---
-
 ## Tier Comparison
-
-![Comparison](img02.png)
+<p align="center">
+    <img src="https://raw.githubusercontent.com/ThiagoCDMartins/M-Companion/main/img02.png" width="900">
+</p>
 ---
 
 # 📥 Installation
