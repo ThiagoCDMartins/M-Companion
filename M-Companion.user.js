@@ -504,9 +504,9 @@
         <span class="rio-cc-title">M+ Companion</span>
         <span class="rio-cc-mini-score" data-mini-score>—</span>
         <div class="rio-cc-controls">
-          <label class="rio-cc-mode-toggle" title="Widget flutuante">
-            <input type="checkbox" data-display-mode aria-label="Widget flutuante">
-            Flutuante
+          <label class="rio-cc-mode-toggle" title="Widget Popup">
+            <input type="checkbox" data-display-mode aria-label="Widget Popup">
+            Popup
           </label>
           <button class="rio-cc-btn" data-refresh title="Refresh">&#8635;</button>
           <button class="rio-cc-btn" data-collapse title="Collapse">&#9472;</button>
@@ -718,8 +718,8 @@
       <a class="rio-cc-cta" href="https://mpluscompanion.lovable.app/character/${encodeURIComponent(character.region)}/${encodeURIComponent(character.realm)}/${encodeURIComponent(character.name)}"
           target="_blank" rel="noopener noreferrer">M+ Companion &#8599;</a>
         <label>
-          <input type="checkbox" data-display-mode aria-label="Widget flutuante">
-          Flutuante
+          <input type="checkbox" data-display-mode aria-label="Widget Popup">
+          Popup
         </label>
       </div>
     `;
