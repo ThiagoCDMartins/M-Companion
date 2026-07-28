@@ -1,105 +1,107 @@
 # M+ Companion
 
 <p align="center">
-  <img src="https://img.shields.io/badge/World%20of%20Warcraft-The%20War%20Within-0e76a8?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Raider.IO-Compatible-success?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Tampermonkey-Supported-green?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/github/v/release/ThiagoCDMartins/M-Companion?style=for-the-badge">
+  <img src="https://img.shields.io/github/license/ThiagoCDMartins/M-Companion?style=for-the-badge">
+  <img src="https://img.shields.io/github/stars/ThiagoCDMartins/M-Companion?style=for-the-badge">
 </p>
 
-A lightweight userscript that enhances **Raider.IO Character Pages** by displaying a modern Mythic+ comparison widget with the latest seasonal cutoffs.
+<p align="center">
 
-The widget automatically compares your current Mythic+ Rating against:
+A modern userscript that enhances **Raider.IO** character pages with a beautiful floating Mythic+ widget.
 
-- 👑 Top 0.1%
-- 🥇 Top 1%
-- 🏆 Top 10%
+</p>
 
 ---
 
-# Features
+# ✨ Features
 
-- Character summary
-- Character avatar
-- Class colored name
-- Guild information
-- Current Mythic+ Score
-- Seasonal Top 10%, Top 1% and Top 0.1% comparison
-- Progress bars
-- Difference to each cutoff
-- Automatic cache
-- Responsive floating widget
-- Direct shortcut to M+ Companion Website
-- Automatic page detection
-- Works while navigating Raider.IO without refreshing the page
-
----
-
-# Preview
-
-> Add a screenshot here.
-
-```
-images/preview.png
-```
+- 👤 Character summary
+- 🎯 Current Mythic+ Rating
+- 👑 Top 0.1% cutoff
+- 🥇 Top 1% cutoff
+- 🏆 Top 10% cutoff
+- 📈 Progress bars
+- 📊 Rating difference
+- 🎨 Class colors
+- 🏰 Guild information
+- 🖼️ Faction banner
+- ⚡ Automatic cache
+- 🔄 Automatic page detection
+- 🚀 Works without refreshing Raider.IO
+- 🔗 Direct shortcut to M+ Companion Website
 
 ---
 
-# Requirements
+# 📷 Preview
 
-You need **one** of the following userscript managers:
+## Character Widget
+
+<p align="center">
+<img src="./img01.png" width="850">
+</p>
+
+---
+
+## Tier Comparison
+
+<p align="center">
+<img src="./img02.png" width="850">
+</p>
+
+---
+
+# 📥 Installation
+
+## Step 1 — Install a Userscript Manager
+
+You only need **one** of these extensions.
 
 | Browser | Extension |
 |----------|-----------|
 | Chrome | Tampermonkey |
 | Edge | Tampermonkey |
 | Firefox | Tampermonkey or Violentmonkey |
-| Opera | Tampermonkey |
 | Brave | Tampermonkey |
+| Opera | Tampermonkey |
 
----
-
-# Install Userscript Manager
-
-## Tampermonkey
+### Tampermonkey
 
 https://www.tampermonkey.net/
 
-## Violentmonkey
+### Violentmonkey
 
 https://violentmonkey.github.io/
 
 ---
 
-# Install Script
-
-## Stable Release
+## Step 2 — Install M+ Companion
 
 Click the button below.
 
 <p align="center">
 
-<a href="https://github.com/SEU_USUARIO/SEU_REPOSITORIO/raw/main/M%2B%20Companion.user.js">
-<img src="https://img.shields.io/badge/Install-M%2B%20Companion-blue?style=for-the-badge">
+<a href="https://github.com/ThiagoCDMartins/M-Companion/raw/main/M-Companion.user.js">
+
+<img src="https://img.shields.io/badge/⬇-Install%20M%2B%20Companion-4f46e5?style=for-the-badge">
+
 </a>
 
 </p>
 
-Or open:
+Or open directly:
 
 ```
-https://github.com/SEU_USUARIO/SEU_REPOSITORIO/raw/main/M%2B%20Companion.user.js
+https://github.com/ThiagoCDMartins/M-Companion/raw/main/M-Companion.user.js
 ```
 
-Tampermonkey will automatically detect the userscript and show the installation page.
+Tampermonkey will automatically open the installation screen.
 
 ---
 
-# How to Use
+# 🚀 Usage
 
-1. Install Tampermonkey.
-2. Install the userscript.
-3. Open any Raider.IO character page.
+After installation simply visit any Raider.IO character page.
 
 Example:
 
@@ -107,43 +109,59 @@ Example:
 https://raider.io/characters/us/dalaran/Upsïde
 ```
 
-The widget will automatically appear in the bottom-right corner.
+The widget will appear automatically in the bottom-right corner.
+
+No configuration required.
 
 ---
 
-# Widget
+# 📊 Widget Information
 
-Displays:
+The widget displays:
 
-- Character Information
-- Guild
+- Character Name
+- Avatar
 - Class
-- Current Score
+- Spec
+- Guild
+- Realm
+- Region
+- Current Mythic+ Score
 - Top 10%
 - Top 1%
 - Top 0.1%
-- Progress
-- Difference
-- Direct M+ Companion Link
+- Progress to each tier
+- Rating difference
+- Direct link to M+ Companion
 
 ---
 
-# Data Source
+# 📡 Data Sources
 
-The widget retrieves information directly from:
+Information is obtained directly from Raider.IO APIs.
 
-- Raider.IO Character API
-- Raider.IO Seasonal Cutoffs API
+- Character Profile API
+- Mythic+ Seasonal Cutoffs API
 
-No personal data is collected or stored.
+No personal information is collected or transmitted.
 
 ---
 
-# Compatibility
+# ✅ Compatibility
 
-✔ Retail
+✔ World of Warcraft Retail
 
-✔ Raider.IO Character Pages
+✔ Raider.IO
+
+✔ Chrome
+
+✔ Edge
+
+✔ Firefox
+
+✔ Brave
+
+✔ Opera
 
 ✔ Tampermonkey
 
@@ -151,47 +169,53 @@ No personal data is collected or stored.
 
 ---
 
-# Development
+# 🛠 Development
 
 Clone the repository.
 
 ```bash
-git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+git clone https://github.com/ThiagoCDMartins/M-Companion.git
 ```
 
 ---
 
-# Changelog
+# 📜 Changelog
 
 ## v1.3.0
 
-- Character Header
+- New Character Header
 - Guild Support
 - Class Colors
-- Progress Bars
 - Tier Selection
+- Progress Bars
 - Session Cache
 - Floating Widget
-- M+ Companion Link
+- M+ Companion Shortcut
 
 ---
 
-# License
+# 🤝 Contributing
 
-MIT License
+Pull Requests are welcome.
+
+Feel free to open Issues with suggestions, bug reports or feature requests.
 
 ---
 
-# Author
+# ⭐ Support
+
+If you enjoy this project, consider giving it a **Star** on GitHub.
+
+It helps the project grow and motivates future updates.
+
+---
+
+# 👤 Author
 
 **Upside**
 
 ---
 
-# Support
+# 📄 License
 
-If you enjoy this project, consider leaving a ⭐ on GitHub.
-
-```
-⭐ Star the repository
-```
+MIT License
