@@ -12,6 +12,7 @@
 // @supportURL   https://github.com/ThiagoCDMartins/M-Companion/issues
 // @downloadURL  https://raw.githubusercontent.com/ThiagoCDMartins/M-Companion/main/M-Companion.user.js
 // @updateURL    https://raw.githubusercontent.com/ThiagoCDMartins/M-Companion/main/M-Companion.user.js
+// @license MIT
 // ==/UserScript==
 
 (function () {
