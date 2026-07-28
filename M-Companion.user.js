@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         M+ Companion
 // @namespace    https://raider.io/
-// @version      1.3.10
+// @version      1.3.11
 // @description  Displays a card comparing the character's M+ score to the current season's cutoffs.
 // @author       Upside
 // @match        https://raider.io/*
